@@ -40,7 +40,7 @@ guess-the-country/
 # Setup and Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/guess-the-country.git
+git clone https://github.com/meetgupta7388/Guess-the-Country.git
 cd guess-the-country
 ```
 
