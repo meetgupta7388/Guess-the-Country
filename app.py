@@ -15,9 +15,9 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 def get_country_hints():
     prompt = """
-You are a geography expert. First randomly select one continent from: Africa, Asia, Europe, North America, South America, or Oceania. Then randomly select a country from that chosen continent and give exactly 10 hints about it. The hints should progress from vague to very specific. Follow this exact format with no other text or explanations:
+You are a geography expert. First randomly select one continent from: Africa, Antarctica, Asia, Europe, North America, South America, or Oceania. Then randomly select a country from that chosen continent (avoid selecting any recently used countries like Thailand) and give exactly 10 hints about it. The hints should progress from vague to very specific. Follow this exact format with no other text or explanations:
 
-[First hint like which country is in which continent]
+[First hint like which continent]
 [Second hint like for which it is famous for in whole world]
 [Third hint like area and population]
 [Fourth hint like physical description of country]
@@ -51,7 +51,7 @@ Keep format exactly as shown above
             json={
                 "model": "llama3-70b-8192",
                 "messages": [{"role": "user", "content": prompt}],
-                "temperature": 0.7
+                "temperature": 0.9
             }
         )
         
